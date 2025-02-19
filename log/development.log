@@ -28,3 +28,29 @@ Migrating to CreateArrozs (20250219205102)
   [1m[36mArroz Load (2.6ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" WHERE "arrozs"."id" = 2 LIMIT 1 /*application='MiApi'*/[0m
   [1m[36mArroz Load (2.0ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" WHERE "arrozs"."id" = 1 LIMIT 1 /*application='MiApi'*/[0m
   [1m[36mArroz Load (62.0ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mArroz Load (65.0ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mArroz Load (5.0ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /*application='MiApi'*/[0m
+  [1m[36mArroz Load (58.6ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" WHERE "arrozs"."id" = 2 LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Update (4.8ms)[0m  [1m[33mUPDATE "arrozs" SET "marca" = 'hola', "cantidad" = 450, "updated_at" = '2025-02-19 21:53:35.187342' WHERE "arrozs"."id" = 3 /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (16.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Load (5.3ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Create (5.5ms)[0m  [1m[32mINSERT INTO "arrozs" ("marca", "cantidad", "created_at", "updated_at") VALUES ('leopardo', 375, '2025-02-19 21:58:43.073728', '2025-02-19 21:58:43.073728') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Load (6.0ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mArroz Load (1.9ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" WHERE "arrozs"."id" = 4 LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Update (5.8ms)[0m  [1m[33mUPDATE "arrozs" SET "marca" = 'roaroa', "updated_at" = '2025-02-19 22:01:07.604100' WHERE "arrozs"."id" = 4 /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Load (4.4ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Create (4.5ms)[0m  [1m[32mINSERT INTO "arrozs" ("marca", "cantidad", "created_at", "updated_at") VALUES ('margarita', 125, '2025-02-19 22:02:34.199332', '2025-02-19 22:02:34.199332') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Load (5.1ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mArroz Load (2.0ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" WHERE "arrozs"."id" = 4 LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Update (3.7ms)[0m  [1m[33mUPDATE "arrozs" SET "marca" = 'paganini', "updated_at" = '2025-02-19 22:04:10.405869' WHERE "arrozs"."id" = 4 /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Load (3.5ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mArroz Load (2.1ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" WHERE "arrozs"."id" = 4 LIMIT 1 /*application='MiApi'*/[0m
