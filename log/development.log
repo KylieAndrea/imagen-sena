@@ -1,0 +1,30 @@
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='MiApi'*/[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-02-19 21:01:37.838776', '2025-02-19 21:01:37.838786') RETURNING "key" /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+Migrating to CreateArrozs (20250219205102)
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "arrozs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "marca" varchar, "cantidad" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250219205102') RETURNING "version" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Create (15.9ms)[0m  [1m[32mINSERT INTO "arrozs" ("marca", "cantidad", "created_at", "updated_at") VALUES ('diana', 250, '2025-02-19 21:04:13.376543', '2025-02-19 21:04:13.376543') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (15.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Load (2.7ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mArroz Load (1.1ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" WHERE "arrozs"."id" = 1 LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mArroz Load (4.7ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mArroz Load (9.0ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Create (4.5ms)[0m  [1m[32mINSERT INTO "arrozs" ("marca", "cantidad", "created_at", "updated_at") VALUES ('leoparde', 250, '2025-02-19 21:10:41.884039', '2025-02-19 21:10:41.884039') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Load (7.7ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Create (4.6ms)[0m  [1m[32mINSERT INTO "arrozs" ("marca", "cantidad", "created_at", "updated_at") VALUES ('roa', 500, '2025-02-19 21:12:39.724713', '2025-02-19 21:12:39.724713') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mArroz Load (5.5ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mArroz Load (2.0ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" WHERE "arrozs"."id" = 3 LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mArroz Load (2.6ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" WHERE "arrozs"."id" = 2 LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mArroz Load (2.0ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" WHERE "arrozs"."id" = 1 LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mArroz Load (62.0ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
