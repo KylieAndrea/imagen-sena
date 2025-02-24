@@ -7,4 +7,7 @@ class TejidosController < ApplicationController
         tej =  Tejido.find(params[:id])
         render json: tej
     end
+    def post
+        
+    end
 end
