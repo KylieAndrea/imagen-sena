@@ -54,3 +54,89 @@ Migrating to CreateArrozs (20250219205102)
   [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
   [1m[36mArroz Load (3.5ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
   [1m[36mArroz Load (2.1ms)[0m  [1m[34mSELECT "arrozs".* FROM "arrozs" WHERE "arrozs"."id" = 4 LIMIT 1 /*application='MiApi'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "arrozs" /*application='MiApi'*/[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "arrozs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "marca" varchar, "cantidad" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MiApi'*/[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250219205102) /*application='MiApi'*/[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-02-24 21:42:11.210346', '2025-02-24 21:42:11.210353') RETURNING "key" /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '0c6141cbd7c1da473f9aedd309a450a4b3737919', '2025-02-24 21:42:11.226562', '2025-02-24 21:42:11.226568') RETURNING "key" /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+Migrating to CreateTejidos (20250224213813)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "tejidos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "color" varchar, "diseño" varchar, "precio" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250224213813') RETURNING "version" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mTejido Create (9.1ms)[0m  [1m[32mINSERT INTO "tejidos" ("color", "diseño", "precio", "created_at", "updated_at") VALUES ('rojo', 'fresa', 12000, '2025-02-24 21:46:46.305751', '2025-02-24 21:46:46.305751') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mTejido Create (3.5ms)[0m  [1m[32mINSERT INTO "tejidos" ("color", "diseño", "precio", "created_at", "updated_at") VALUES ('azul', 'nube', 15000, '2025-02-24 21:47:49.325923', '2025-02-24 21:47:49.325923') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mTejido Load (1.6ms)[0m  [1m[34mSELECT "tejidos".* FROM "tejidos" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+Started GET "/tejidos" for 172.17.0.1 at 2025-02-24 21:56:42 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+Processing by TejidosController#index as HTML
+Completed 500 Internal Server Error in 191ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+  
+NameError (uninitialized constant TejidosController::Tejidos):
+  
+app/controllers/tejidos_controller.rb:3:in `index'
+Started GET "/favicon.ico" for 172.17.0.1 at 2025-02-24 21:56:44 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/tejidos" for 172.17.0.1 at 2025-02-24 21:57:02 +0000
+Processing by TejidosController#index as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (uninitialized constant TejidosController::Tejidos):
+  
+app/controllers/tejidos_controller.rb:3:in `index'
+Started GET "/tejido" for 172.17.0.1 at 2025-02-24 21:57:07 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/tejido"):
+  
+Started GET "/tejidos" for 172.17.0.1 at 2025-02-24 21:57:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+Processing by TejidosController#index as HTML
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (uninitialized constant TejidosController::Tejidos):
+  
+app/controllers/tejidos_controller.rb:3:in `index'
+Started GET "/tejidos" for 172.17.0.1 at 2025-02-24 21:57:50 +0000
+Processing by TejidosController#index as HTML
+  [1m[36mTejido Load (37.1ms)[0m  [1m[34mSELECT "tejidos".* FROM "tejidos" /*action='index',application='MiApi',controller='tejidos'*/[0m
+  ↳ app/controllers/tejidos_controller.rb:4:in `index'
+Completed 200 OK in 197ms (Views: 22.1ms | ActiveRecord: 44.2ms (1 query, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/tejidos/1" for 172.17.0.1 at 2025-02-24 21:59:52 +0000
+Processing by TejidosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTejido Load (3.5ms)[0m  [1m[34mSELECT "tejidos".* FROM "tejidos" WHERE "tejidos"."id" = 1 LIMIT 1 /*action='show',application='MiApi',controller='tejidos'*/[0m
+  ↳ app/controllers/tejidos_controller.rb:7:in `show'
+Completed 200 OK in 133ms (Views: 0.5ms | ActiveRecord: 44.3ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/tejidos/2" for 172.17.0.1 at 2025-02-24 21:59:58 +0000
+Processing by TejidosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTejido Load (1.6ms)[0m  [1m[34mSELECT "tejidos".* FROM "tejidos" WHERE "tejidos"."id" = 2 LIMIT 1 /*action='show',application='MiApi',controller='tejidos'*/[0m
+  ↳ app/controllers/tejidos_controller.rb:7:in `show'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
